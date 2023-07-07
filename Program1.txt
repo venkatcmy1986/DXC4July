@@ -1,0 +1,52 @@
+using System;
+using System.Security.Cryptography;
+
+interface IName
+{
+    public void getName(string x);
+
+}
+interface ILocation
+{
+    void getLocation(string x);
+}
+
+interface IAge
+{
+    public void getAge(string x);
+}
+
+
+class user : IName, ILocation, IAge
+{
+    public void getName(string a)
+    {
+        Console.WriteLine("Name {0}", a);
+    }
+
+    public void getLocation(string a)
+    {
+        Console.WriteLine("Location {0}", a);
+
+    }
+
+    public void getAge(string a)
+    {
+        Console.WriteLine("Age {0}", a);
+    }
+}
+class MyClient
+{
+    public static void Main()
+    {
+        IName name = new user();
+        ILocation location = new user();
+        IAge age = new user();
+        user u = new user();
+        u.getName("DXC");
+        u.getLocation("Bangalore");
+        u.getAge("15");
+        Console.ReadLine();
+
+    }
+}
